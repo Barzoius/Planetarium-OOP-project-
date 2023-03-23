@@ -135,6 +135,40 @@ bool PlanetSys::Center = false;
 bool PlanetSys::exist = false;
 Planet* PlanetSys::CenterPlanet = nullptr;
 
+
+class Star{
+    
+private:
+    char* Name;
+    long long life_span;
+    int Diameter;
+    
+public:
+    
+    Star() : Diameter(-100), life_span(0)
+    {
+        Name = new char[strlen("Sparky") + 1];
+            strcpy(Name, "Sparky");
+    }
+    
+    Star(const char* n, int d, long long ls) : Diameter(d), life_span(ls)
+    {
+        Name = new char[strlen(n) + 1];
+            strcpy(Name, n);
+    }
+    
+    const char* getName() const { return Name; }
+    int getDiameter() const { return Diameter; }
+    long long getLS() const { return life_span;}
+    
+    void printStar() const 
+    {
+        std::cout<<"The name of the star: "<<getName()<<std::endl;
+        std::cout<<"The diameter of the star is: "<<getDiameter()<<std::endl;
+        std::cout<<"The life span of this star is: "<<getLS()<<std::endl;
+    }
+};
+
 int main() {
 
     Planet* P1 = new Planet("EARTH", 5000, 15000000);
