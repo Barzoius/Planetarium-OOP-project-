@@ -232,6 +232,14 @@ int main() {
     sys->addSatellite(S2);
 
     sys->printPlanetSys();
+    
+     Star* Star1 = new Star("SUN", 100, 45);
+
+    System* Sys = new System("SOLARSYS", Star1);
+
+    Sys ->addStarSys(sys);
+
+    Sys -> printStarSys();
 
     return 0;
 }
