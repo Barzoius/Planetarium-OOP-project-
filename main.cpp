@@ -169,6 +169,56 @@ public:
     }
 };
 
+class System{
+
+private:
+    char* Name;
+    Star* star;
+    std::vector<PlanetSys*> Sys;
+    static bool Center;
+    static bool exist;
+    static Star* CentralStar;
+
+public:
+    System(const char* n, Star* s) : star(s)
+    {
+        if(exist)
+        {
+            throw std::logic_error("Such a stellar system already exists or is in creation.");
+        }
+        Name = new char[strlen(n) + 1];
+            strcpy(Name, n);
+
+        exist = true;
+        CentralStar = s;
+        Center = true;
+
+    }
+
+    void addStarSys(PlanetSys* s)
+    {
+        if(!Center)
+        {
+            throw std::logic_error("A central star hasn't been added yet.");
+        }
+
+        Sys.push_back(s);
+    }
+
+    void printStarSys()
+    {
+        std::cout<<this->Name;
+        for(auto s : Sys)
+            std::cout<<"X"; ///will need to add a getter for a PlanetSys object
+    }
+
+
+};
+
+bool System::exist = false;
+bool System::Center = false;
+Star* System::CentralStar = nullptr;
+
 int main() {
 
     Planet* P1 = new Planet("EARTH", 5000, 15000000);
