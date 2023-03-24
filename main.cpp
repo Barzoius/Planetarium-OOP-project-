@@ -235,7 +235,7 @@ int main() {
     
      Star* Star1 = new Star("SUN", 100, 45);
 
-    System* Sys = new System("SOLARSYS", Star1);
+    System* Sys = new System("SOLARSYSTEM", Star1);
 
     Sys ->addStarSys(sys);
 
