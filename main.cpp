@@ -169,6 +169,8 @@ public:
     }
 };
 
+class DwarfStar : public Star {};
+
 class System{
 
 private:
