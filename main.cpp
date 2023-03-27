@@ -171,6 +171,8 @@ public:
 
 class DwarfStar : public Star {};
 
+class GiantStar : public Star {};
+
 class System{
 
 private:
