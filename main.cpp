@@ -8,7 +8,7 @@ private:
 
     char* Name;
     int Diameter;
-    long long S_P;
+    long long S_P; //S_P represents the Sun to Planet distance
 
 public:
 
